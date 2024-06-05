@@ -1,0 +1,8 @@
+{
+  "Api": {
+    "Address": ":9999"
+  },
+  "Database": {
+    "ConnectionString": "leo:psw@tcp(localhost:3306)/db"
+  }
+}

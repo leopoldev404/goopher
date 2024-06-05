@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: leo
+      MYSQL_PASSWORD: psw
+      MYSQL_DATABASE: test
+    ports:
+      - "3306:3306"
+  smtp:
+    image: namshi/smtp
+    restart: always
+    container_name: email-container
+    ports:
+      - "1025:25"

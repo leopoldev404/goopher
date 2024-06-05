@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option go_package = "github.com/leopoldev404/microservices/common/api"
+
+package api
+
+message Item {
+    string Id = 1;
+    string Name = 2;
+    string Price = 3;
+}
+
+message Order {
+    string Id = 1;
+    string CustomerId = 2;
+    string Status = 3;
+    repeated Item Items = 4;
+}
+
+message ItemsWithQuantity {
+    string Id = 1;
+    int32 Quantity = 2;
+
+}
+
+message CreateOrderRequest {
+    string CustomerId = 1;
+    repeated ItemsWithQuantity Items = 2;
+}
+
+service OrderService {
+    rpc Create() return (Order);
+}
